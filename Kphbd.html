@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<script>
+    alert("Happy birthday kapu bhai");
+alert("sorry for late");
+alert("time to cut the cake");
+alert("keep volume up it party time")
+</script>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Rouge+Script&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+/* *, *::before, *::after {
+  box-sizing: inherit;
+} */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #dce1e5;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  font-size: 14px;
+  color: #cfd6e1;
+  line-height: 1.5;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+.bhd{
+    margin-top: 100vh;
+}
+
+* {
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: 0;
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}
+
+.movie-card {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  min-height: 300px;
+  display: block;
+  margin: 8vh auto;
+  border-radius: 8px;
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  .movie-card {
+    width: 95%;
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .movie-card {
+    background-position: 50% 0%;
+    background-size: cover;
+    height: 400px;
+  }
+}
+.movie-card[data-movie="Blade Runner"] {
+  background-image: url(http://api.sololearn.com/Uploads/Avatars/19063762.jpg);
+}
+.movie-card[data-movie="Back to the Future"] {
+  background-image: url("http://api.sololearn.com/Uploads/Avatars/17555554.jpg");
+}
+.movie-card[data-movie="Akira"] {
+  background-image: url("http://api.sololearn.com/Uploads/Avatars/18653347.jpg");
+}
+.movie-card__overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(42, 159, 255, 0.2)), color-stop(60%, #212120), to(#212120));
+  background: linear-gradient(to right, rgba(42, 159, 255, 0.2) 0%, #212120 60%, #212120 100%);
+  background-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+@media screen and (max-width: 600px) {
+  .movie-card__overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 159, 255, 0.2)), color-stop(60%, #212120), to(#212120));
+    background: linear-gradient(to bottom, rgba(42, 159, 255, 0.2) 0%, #212120 60%, #212120 100%);
+  }
+}
+.movie-card__share {
+  padding: 1em;
+  display: inline-block;
+  width: 100%;
+  max-width: 130px;
+}
+@media screen and (max-width: 600px) {
+  .movie-card__share {
+    display: block;
+    width: 100%;
+  }
+}
+.movie-card__icon {
+  color: #ffffff;
+  mix-blend-mode: lighten;
+  opacity: .4;
+  background: none;
+  padding: 0;
+}
+.movie-card__icon:hover {
+  opacity: 1;
+  mix-blend-mode: lighten;
+}
+.movie-card__icon:not(:first-of-type) {
+  margin-left: 5px;
+}
+.movie-card__icon i {
+  font-size: 1.2em;
+}
+.movie-card__content {
+  width: 100%;
+  max-width: 370px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  position: relative;
+  float: right;
+  padding-right: 1.2em;
+  padding-bottom: 1em;
+}
+@media screen and (max-width: 1000px) {
+  .movie-card__content {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .movie-card__content {
+    margin-top: 4.2em;
+    width: 100%;
+    float: inherit;
+    max-width: 100%;
+    padding: 0 1em 1em;
+  }
+}
+.movie-card__header {
+  margin-bottom: 2em;
+}
+.movie-card__title {
+  color: #ffffff;
+  margin-bottom: .25em;
+  opacity: .75;
+}
+.movie-card__info {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8em;
+  color: #2a9fff;
+  line-height: 1;
+  margin: 0;
+  font-weight: 700;
+  opacity: .5;
+}
+.movie-card__desc {
+  font-weight: 300;
+  opacity: .84;
+  margin-bottom: 2em;
+  font-size:30px;
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.btn {
+  padding: .5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 3px solid #ffffff;
+}
+
+/* .btn::before {
+  font-family: 'Material Icons';
+  content: '\e037';
+  vertical-align: middle;
+  font-size: 1.5em;
+  padding-right: .5em;
+} */
+
+.btn-outline:hover {
+  border-color: #2a9fff;
+  color: #2a9fff;
+  box-shadow: 0px 1px 8px 0px rgba(245, 199, 0, 0.2);
+}
+
+
+
+/* Vslr */
+
+
+
+.cakebhd {
+    background: #beb1aa;
+  }
+  
+  .plate {
+    position: absolute;
+    z-index: 1;
+    bottom: -1px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 500px;
+    height: 10px;
+    background: #660805;
+    border-radius: 10px;
+  }
+  .plate--small {
+    width: 20px;
+    left: -20%;
+  }
+  .plate--small.right {
+    width: 40px;
+    left: 120%;
+  }
+  
+  .cake {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: #fccb9d;
+    border: 10px solid #660805;
+    border-radius: 40px;
+    box-shadow: inset -30px -10px #fbbe84;
+  }
+  .cake__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 400px;
+    -webkit-transform: translate(-50%, -50%) scale(0.6,0.7);
+            transform: translate(-50%, -50%) scale(0.6,0.7);
+
+  }
+  .cake__layer {
+    display: block;
+    height: 30%;
+    background: #f97369;
+    margin-top: 30%;
+    box-shadow: inset -30px 0px #f85c50;
+  }
+  
+  .ice-cream {
+    background: white;
+  }
+  .ice-cream__container {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    width: 420px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .ice-cream__layer {
+    display: block;
+    height: 100px;
+    border-radius: 40px 40px 0 0;
+    box-shadow: inset -20px 0 #f2f2f2;
+  }
+  .ice-cream__drops {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+  }
+  .ice-cream__drop {
+    border-radius: 0% 0% 50% 50%;
+    position: relative;
+  }
+  .ice-cream__drop:nth-child(1) {
+    width: 20%;
+    height: 86px;
+  }
+  .ice-cream__drop:nth-child(2) {
+    width: 10%;
+  }
+  .ice-cream__drop:nth-child(3) {
+    width: 9%;
+    height: 44px;
+    top: -22px;
+  }
+  .ice-cream__drop:nth-child(4) {
+    width: 12%;
+    top: -33px;
+    height: 50px;
+  }
+  .ice-cream__drop:nth-child(5) {
+    width: 14%;
+    height: 60px;
+    top: -8px;
+  }
+  .ice-cream__drop:nth-child(6) {
+    width: 19%;
+    height: 77px;
+    top: -47px;
+  }
+  .ice-cream__drop:nth-child(7) {
+    width: 16%;
+    height: 64px;
+    top: -28px;
+    box-shadow: inset -20px 0 #f2f2f2;
+  }
+  .ice-cream__drop--mask {
+    top: -18px;
+    background-color: #fccb9d;
+    height: 40px;
+    border-radius: 50% 50% 0% 0%;
+  }
+  
+  .peach {
+    position: absolute;
+    top: 23%;
+    left: 58%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #f90865;
+    padding: 7px 13px;
+    box-shadow: inset -15px -10px #e2055b;
+  }
+  .peach::after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 5px solid #036b03;
+    border-radius: 20px 5px 0 0;
+    top: -20%;
+    left: 50%;
+    width: 37%;
+    height: 28%;
+  }
+  .peach__glow {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    opacity: .8;
+  }
+  
+  .candle {
+    width: 7%;
+    height: 17%;
+    background: #ffe6e6;
+    position: absolute;
+    left: 54%;
+    top: 19%;
+    box-shadow: inset -10px 0 #ffcdcd;
+  }
+  .candle__stripe {
+    display: block;
+    height: 16%;
+    background: #ff889c;
+    margin-top: 30%;
+  }
+  
+  .fire {
+    height: 14%;
+    position: absolute;
+    left: 52%;
+    top: 4%;
+  }
+  
+
+
+  .container {
+    position: relative;
+    top: 100%;
+    width: 80%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .center {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: white;
+    width: 250px;
+    min-height: 404.5px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: -20px -20px 0px 0px #fb968b;
+    border-radius: 10px;
+    -webkit-animation-name: shadow-show;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: shadow-show;
+    animation-duration: 1.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    /* custom */
+  }
+  .card h1, .card h2, .card h3, .card h4, .card h5 {
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    color: #282828;
+  }
+  .card hr {
+    display: block;
+    border: none;
+    height: 3px;
+    background-color: salmon;
+    margin: 0px;
+    -webkit-animation-name: line-show;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.3s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: line-show;
+    animation-duration: 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    /* custom */
+  }
+  .card p {
+    margin: 15px 0px 0px 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    letter-spacing: -0.25px;
+    line-height: 1.25;
+    font-size: 16px;
+    word-break: break-all;
+    word-wrap: pre-wrap;
+    color: #282828;
+    -webkit-animation-name: p-show;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: p-show;
+    animation-duration: 1.5s;
+  }
+  .card button {
+    border: none;
+    background-color: salmon;
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 30px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes line-show {
+    from {
+      margin: 0px 100px;
+    }
+    to {
+      margin: 0px;
+    }
+  }
+  /* Standard syntax */
+  @keyframes line-show {
+    from {
+      margin: 0px 100px;
+    }
+    to {
+      margin: 0px;
+    }
+  }
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes p-show {
+    from {
+      color: white;
+    }
+    to {
+      color: #282828;
+    }
+  }
+  /* Standard syntax */
+  @keyframes p-show {
+    from {
+      color: white;
+    }
+    to {
+      color: #282828;
+    }
+  }
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes shadow-show {
+    from {
+      box-shadow: 0px 0px 0px 0px #e0e0e0;
+    }
+    to {
+      box-shadow: -20px -20px 0px 0px #fb968b;
+    }
+  }
+  /* Standard syntax */
+  @keyframes shadow-show {
+    from {
+      box-shadow: 0px 0px 0px 0px #e0e0e0;
+    }
+    to {
+      box-shadow: -20px -20px 0px 0px #fb968b;
+    }
+  }
+
+.body{
+  position: fixed;
+  top: 0;
+  left: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #04088a;
+    
+
+}
+.loader{
+    width: 250px;
+    height: 250px;
+   
+    transform: rotate(45deg);
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 20px;
+    
+}
+
+.load{
+    background-color:  #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 10px #03e9f4, 0 0 15px #03e9f4,
+      0 0 100px #03e9f4;
+}
+    
+    
+    
+</style>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noone</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+    <!-- Bas  -->
+    <div class="cakebhd">
+        <div class="cake__container">
+            <div class="plate"></div>
+            <div class="plate plate--small"></div>
+            <div class="plate plate--small right"></div>
+            <div class="cake">
+              <div class="cake__layer"></div>
+            </div>
+            <div class="candle">
+              <div class="candle__stripe"></div>
+              <div class="candle__stripe"></div>
+              <div class="candle__stripe"></div>
+              <div class="candle__stripe"></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.63 45.2" class="fire">
+              <g>
+                <path d="M27.51,22.81h0c5.85,10.13-1.07,22.57-12.46,22.39h0C3.67,45-3.65,32.35,1.89,22.39h0L14.34,0Z" fill="#ffa233" />
+                <path d="M22.32,27.77h0c3.46,6-.63,13.35-7.36,13.25h0A9.17,9.17,0,0,1,7.17,27.53h0l7.36-13.25Z" fill="#ffb564" />
+                <path d="M18.59,30h0a4.36,4.36,0,0,1-3.7,6.67h0A4.61,4.61,0,0,1,11,29.91h0l3.7-6.66Z" fill="#fccfa2" />
+              </g>
+            </svg>
+            <div class="peach">
+              <div class="peach__glow"></div>
+            </div>
+            <div class="ice-cream__container">
+              <div class="ice-cream ice-cream__layer"></div>
+              <div class="ice-cream__drops">
+                <div class="ice-cream ice-cream__drop"></div>
+                <div class="ice-cream__drop ice-cream__drop--mask"></div>
+                <div class="ice-cream ice-cream__drop"></div>
+                <div class="ice-cream__drop ice-cream__drop--mask"></div>
+                <div class="ice-cream ice-cream__drop"></div>
+                <div class="ice-cream__drop ice-cream__drop--mask"></div>
+                <div class="ice-cream ice-cream__drop"></div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+    <div class="container center">
+      <div class="card">
+        <h2>happy Birthday</h2>
+        <hr/>
+        <p>
+        Happy birthday!” “Sending you smiles for every moment of your special day…Have a wonderful time and a very happy birthday!” “Hope your special day brings you all that your heart desires! Here's wishing you a day full of pleasant surprises! Happy birthday!”
+        </p>
+        
+      </div>
+    </div>
+
+
+    <div class="bhd">
+        
+<div id="movie-card-list">
+    <div class="movie-card" data-movie="Blade Runner">
+      <div class="movie-card__overlay"></div>
+      
+      <div class="movie-card__content">
+        <div class="movie-card__header">
+          <h1 class="movie-card__title">Mr. MAYANK</h1>
+        
+        </div>
+        <p class="movie-card__desc">Happy Birthday kapu bhai wish you a Happy Birthday,
+        wish you great and cool year</p>
+      
+      </div>
+    </div>
+    <div class="movie-card" data-movie="Back to the Future">
+      <div class="movie-card__overlay"></div>
+      
+      <div class="movie-card__content">
+        <div class="movie-card__header">
+          <h1 class="movie-card__title">Miss Devanuj lizol</h1>
+          
+        </div>
+        <p class="movie-card__desc">Happy Birthday mad brother
+Wishing you a year ahead filled with happiness,  joy , prosperity and success. And yeah! Lots of maggi chocolate.
+        </p>
+      
+      </div>
+    </div>
+    <div class="movie-card" data-movie="Akira">
+      <div class="movie-card__overlay"></div>
+      
+      <div class="movie-card__content">
+        <div class="movie-card__header">
+          <h1 class="movie-card__title">Miss Anshu and Mr.Debashish</h1>
+       
+        </div>
+        <p class="movie-card__desc">Happy birthday  bhai 🎊🎉
+May all your wishes comes true and you have a never ending smile on your face forever 😊😊
+</p>
+      
+      </div>
+    </div>
+  </div>
+    </div>
+
+    
+    <div class="body">
+      <div class="loader">
+          <div class="load load1"></div>
+          <div class="load load2"></div>
+          <div class="load load3"></div>
+          <div class="load load4"></div>
+          <div class="load load5"></div>
+          <div class="load load6"></div>
+          <div class="load load7"></div>
+          <div class="load load8"></div>
+          <div class="load load9"></div>
+          <div class="load load10"></div>
+          <div class="load load11"></div>
+          <div class="load load12"></div>
+          <div class="load load13"></div>
+          <div class="load load14"></div>
+          <div class="load load15"></div>
+          <div class="load load16"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+          <div class="load"></div>
+      </div>
+  </div>
+ 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha512-L6Z/YtIPQ7eU3BProP34WGU5yIRk7tNHk7vaC2dB1Vy1atz6wl9mCkTPPZ2Rn1qPr+vY2mZ9odZLdGYuaBk7dQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <script>
+      var confetti={maxCount:150,speed:2,frameInterval:15,alpha:1,gradient:!1,start:null,stop:null,toggle:null,pause:null,resume:null,togglePause:null,remove:null,isPaused:null,isRunning:null};!function(){confetti.start=s,confetti.stop=w,confetti.toggle=function(){e?w():s()},confetti.pause=u,confetti.resume=m,confetti.togglePause=function(){i?m():u()},confetti.isPaused=function(){return i},confetti.remove=function(){stop(),i=!1,a=[]},confetti.isRunning=function(){return e};var t=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame,n=["rgba(30,144,255,","rgba(107,142,35,","rgba(255,215,0,","rgba(255,192,203,","rgba(106,90,205,","rgba(173,216,230,","rgba(238,130,238,","rgba(152,251,152,","rgba(70,130,180,","rgba(244,164,96,","rgba(210,105,30,","rgba(220,20,60,"],e=!1,i=!1,o=Date.now(),a=[],r=0,l=null;function d(t,e,i){return t.color=n[Math.random()*n.length|0]+(confetti.alpha+")"),t.color2=n[Math.random()*n.length|0]+(confetti.alpha+")"),t.x=Math.random()*e,t.y=Math.random()*i-i,t.diameter=10*Math.random()+5,t.tilt=10*Math.random()-10,t.tiltAngleIncrement=.07*Math.random()+.05,t.tiltAngle=Math.random()*Math.PI,t}function u(){i=!0}function m(){i=!1,c()}function c(){if(!i)if(0===a.length)l.clearRect(0,0,window.innerWidth,window.innerHeight),null;else{var n=Date.now(),u=n-o;(!t||u>confetti.frameInterval)&&(l.clearRect(0,0,window.innerWidth,window.innerHeight),function(){var t,n=window.innerWidth,i=window.innerHeight;r+=.01;for(var o=0;o<a.length;o++)t=a[o],!e&&t.y<-15?t.y=i+100:(t.tiltAngle+=t.tiltAngleIncrement,t.x+=Math.sin(r)-.5,t.y+=.5*(Math.cos(r)+t.diameter+confetti.speed),t.tilt=15*Math.sin(t.tiltAngle)),(t.x>n+20||t.x<-20||t.y>i)&&(e&&a.length<=confetti.maxCount?d(t,n,i):(a.splice(o,1),o--))}(),function(t){for(var n,e,i,o,r=0;r<a.length;r++){if(n=a[r],t.beginPath(),t.lineWidth=n.diameter,i=n.x+n.tilt,e=i+n.diameter/2,o=n.y+n.tilt+n.diameter/2,confetti.gradient){var l=t.createLinearGradient(e,n.y,i,o);l.addColorStop("0",n.color),l.addColorStop("1.0",n.color2),t.strokeStyle=l}else t.strokeStyle=n.color;t.moveTo(e,n.y),t.lineTo(i,o),t.stroke()}}(l),o=n-u%confetti.frameInterval),requestAnimationFrame(c)}}function s(t,n,o){var r=window.innerWidth,u=window.innerHeight;window.requestAnimationFrame=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(t){return window.setTimeout(t,confetti.frameInterval)};var m=document.getElementById("confetti-canvas");null===m?((m=document.createElement("canvas")).setAttribute("id","confetti-canvas"),m.setAttribute("style","display:block;z-index:999999;pointer-events:none;position:fixed;top:0"),document.body.prepend(m),m.width=r,m.height=u,window.addEventListener("resize",function(){m.width=window.innerWidth,m.height=window.innerHeight},!0),l=m.getContext("2d")):null===l&&(l=m.getContext("2d"));var s=confetti.maxCount;if(n)if(o)if(n==o)s=a.length+o;else{if(n>o){var f=n;n=o,o=f}s=a.length+(Math.random()*(o-n)+n|0)}else s=a.length+n;else o&&(s=a.length+o);for(;a.length<s;)a.push(d({},r,u));e=!0,i=!1,c(),t&&window.setTimeout(w,t)}function w(){e=!1}}();
+
+    </script>
+    <script>
+
+const t1 = gsap.timeline({repeat: -1})
+.to(".load",{opacity:0,rotate:90,stagger: { // wrap advanced options in an object
+    each: .5,
+    from: "center",
+    grid: "auto",
+    ease: "ease",
+  }})
+.to(".load",{opacity:1,rotate:0,stagger: { // wrap advanced options in an object
+    each: .5,
+    from: "center",
+    grid: "auto",
+    ease: "ease",
+  }})
+
+
+  var sound2 = new Howl({
+  src: ['https://dl.dropbox.com/s/68xtq4b04khlyvi/%25E3%2580%2590TDA_%25E3%2583%25BBMMD%25E3%2580%2591%25E3%2580%258E%25E5%258D%2583%25E6%259C%25AC%25E6%25A1%259C_Senbonzakura%25E3%2580%258F%25E3%2580%25901440p-60fps_or_WQHD%25E3%2580%2591Tda_china_dress_Haku%28128k%29.mp3?dl=1']
+});
+var sound = new Howl({
+  src: [' https://dl.dropbox.com/s/s0gu45bl3pwbwjw/Happy%20Birthday%20Best%20friend%20%28Female%20Version%29%20Friendship%20Poetry%20A%20Poetry%20By%20Insane%20Writer.mp3?dl=1'],
+  volume:1,
+  onend: () =>{
+    sound2.play();
+  }
+});
+// Clear listener after first call.
+sound2.once('load', function(){
+
+  $(".body").fadeOut("slow",()=>{
+    sound.play();
+    confetti.start();
+  });
+  
+});
+
+
+      
+    </script>
+</body>
+</html>
